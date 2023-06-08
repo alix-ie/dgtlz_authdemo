@@ -6,24 +6,10 @@ from typing import Optional
 from fastapi import FastAPI, Form, Cookie
 from fastapi.responses import Response
 
+from config import SECRET_KEY, users
+
 
 app = FastAPI()
-
-SECRET_KEY = "57319b1d3cd68fadbe552c149dd4e9c3b7e86c8f731c30c3c4bb55b931950d8c"
-
-
-users = {
-    "alex@user.com": {
-        "name": "Alex",
-        "password": "123456",
-        "balance": 100000
-    },
-    "peet@user.com": {
-        "name": "Peet",
-        "password": "234567",
-        "balance": 20000
-    }
-}
 
 
 def create_data_sign(data: str) -> str:
